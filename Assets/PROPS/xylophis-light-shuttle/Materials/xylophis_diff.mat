@@ -12,7 +12,7 @@ Material:
   m_ShaderKeywords: _CAUSTICS_ON _DEPTHFOG_ON _DEPTH_EFFECTS_ON _EDGEFADE_ON _EMISSION
     _FLOW_ON _FOAM_NORMALS_ON _FOAM_ON _NORMALMAP _NORMALMAP_1_ON _PARALLAXMAP _REFLECTIONS_ON
     _SPECGLOSSMAP _SPECULAR_ON
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -496,7 +496,7 @@ Material:
     - _DetailBaseColorTint: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DetailScroll: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1.3041189, g: 1.3041189, b: 1.3041189, a: 1}
     - _EmissionMapScroll: {r: 0, g: 0, b: 0, a: 0}
     - _FlowMapScale: {r: 2, g: 2, b: 0, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
