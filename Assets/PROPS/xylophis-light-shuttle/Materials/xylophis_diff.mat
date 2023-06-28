@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: xylophis_diff
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 4884dd4f4d3472643af439cf0504948a, type: 3}
   m_ShaderKeywords: _CAUSTICS_ON _DEPTHFOG_ON _DEPTH_EFFECTS_ON _EDGEFADE_ON _EMISSION
     _FLOW_ON _FOAM_NORMALS_ON _FOAM_ON _NORMALMAP _NORMALMAP_1_ON _PARALLAXMAP _REFLECTIONS_ON
     _SPECGLOSSMAP _SPECULAR_ON
@@ -22,6 +22,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AOTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AlphaMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -39,6 +43,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 6f4dc11514eb59a46a5b3ab95750e926, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpTex:
         m_Texture: {fileID: 2800000, guid: 6f4dc11514eb59a46a5b3ab95750e926, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -79,6 +87,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailRoughnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DisplacementTex:
+        m_Texture: {fileID: 2800000, guid: bba318da12816df4f940917a77c55a7e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EdgeTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -144,6 +160,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MetallicMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicTex:
+        m_Texture: {fileID: 2800000, guid: 399c5b1c49e5c7d4780f288bc49d93a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
@@ -222,6 +242,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SmoothnessTex:
+        m_Texture: {fileID: 2800000, guid: 63e99fe5a2b80374681a8cac421fe69c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 2800000, guid: 63e99fe5a2b80374681a8cac421fe69c, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -236,6 +260,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _ACES: 0
+    - _AOPower: 1
     - _AlphaMaskChannel: 3
     - _AlphaMaskOpacity: 1
     - _AreaLitRoughnessMult: 1
@@ -313,6 +338,8 @@ Material:
     - _EdgeFadePower: 200
     - _EdgeFadeSSR: 0.1
     - _EdgeFadeToggle: 1
+    - _EdgeLength: 3
+    - _EdgePower: 1
     - _EmissPulseSpeed: 1
     - _EmissPulseStrength: 1
     - _EmissPulseWave: 0
@@ -321,6 +348,7 @@ Material:
     - _EmissionToggle: 0
     - _FPS: 24
     - _Filtering: 0
+    - _FlipNormal: 0
     - _FlipbookMode: 0
     - _FlowMapUV: 0
     - _FlowSpeed: 0.25
@@ -381,7 +409,8 @@ Material:
     - _OcclusionUVSet: 0
     - _Opacity: 1
     - _OpaqueLights: 1
-    - _Parallax: 0.005
+    - _Parallax: 0.01
+    - _ParallaxBias: 0.5
     - _ParallaxOffset: 0
     - _ParallaxSteps: 25
     - _QueueOffset: 0

@@ -1,147 +1,81 @@
-﻿Shader "Materialize/Materialize_Standard_Displace" {
-	Properties {
-		_Color ("Color", Color) = (1,1,1,1)
-		_MainTex ("Albedo (RGB)", 2D) = "white" {}
-		_BumpTex("Normal", 2D) = "bump" {}
-		_MetallicTex("Metallic", 2D) = "black" {}
-		_SmoothnessTex("Smoothness", 2D) = "black" {}
-		_EdgeTex("Edge", 2D) = "grey" {}
-		_AOTex("Ambient Occlusion", 2D) = "white" {}	
-		
-		_Glossiness ("Smoothness", Range(0,5)) = 1.0
-		_Metallic ("Metallic", Range(0,5)) = 1.0		
-		_AOPower ("AO Power", Range(0,5) ) = 1.0
-		_EdgePower ("Edge Power", Range(0,5) ) = 1.0
-		
-		[Toggle(FLIP_NORMAL)] _FlipNormal("Flip Normal Y", Float) = 0
-		
-		_DisplacementTex("Displacement", 2D) = "grey" {}
-		_Parallax ("Height", Range (0.0, 3.0)) = 0.5
-		_ParallaxBias ("Height Bias", Range (0.0, 1.0)) = 0.5
-		_EdgeLength ("Edge length", Range(3,50)) = 3
-	}
-	SubShader {
-		Pass {
-			Name "FORWARD"
-			Tags { "LightMode" = "ForwardBase" }
+﻿Shader "Materialize/Materialize_Standard_Displace_Emission" {
+    Properties {
+        _Color ("Color", Color) = (1,1,1,1)
+        _MainTex ("Albedo (RGB)", 2D) = "white" {}
+        _BumpTex("Normal", 2D) = "bump" {}
+        _MetallicTex("Metallic", 2D) = "black" {}
+        _SmoothnessTex("Smoothness", 2D) = "black" {}
+        _EdgeTex("Edge", 2D) = "grey" {}
+        _AOTex("Ambient Occlusion", 2D) = "white" {}
+        _EmissionTex("Emission", 2D) = "black" {}
+        
+        _Glossiness ("Smoothness", Range(0,5)) = 1.0
+        _Metallic ("Metallic", Range(0,5)) = 1.0
+        _AOPower ("AO Power", Range(0,5) ) = 1.0
+        _EdgePower ("Edge Power", Range(0,5) ) = 1.0
+        
+        [Toggle(FLIP_NORMAL)] _FlipNormal("Flip Normal Y", Float) = 0
+        
+        _DisplacementTex("Displacement", 2D) = "grey" {}
+        _Parallax ("Height", Range (0.0, 3.0)) = 0.5
+        _ParallaxBias ("Height Bias", Range (0.0, 1.0)) = 0.5
+        _EdgeLength ("Edge length", Range(3,50)) = 3
+    }
+    SubShader {
+        Tags { "RenderType"="Opaque" "Queue"="Transparent" }
+        LOD 200
+ 
+        CGPROGRAM
+        #pragma surface surf Standard fullforwardshadows
 
-			CGPROGRAM
-			// compile directives
-			#pragma vertex tessvert_surf
-			#pragma fragment frag_surf
-			#pragma hull hs_surf
-			#pragma domain ds_surf
-			#pragma target 5.0
-			#pragma shader_feature FLIP_NORMAL
-			#pragma multi_compile_fog
-			#pragma multi_compile_fwdbase
-			#define UNITY_PASS_FORWARDBASE
+        #pragma target 3.0
+        #pragma multi_compile_fwdbase
+        #pragma multi_compile_forwardadd
+        #pragma multi_compile_shadowcaster
 
-			#include "Tessellation.cginc"
-			#include "Struct.cginc"
-			#include "Vert.cginc"
-			#include "Tess.cginc"
-			#include "Frag.cginc"
-			ENDCG
-		}
-		
-		Pass {
-			Name "FORWARD"
-			Tags { "LightMode" = "ForwardAdd" }
-			ZWrite Off Blend One One
+        #pragma shader_feature FLIP_NORMAL
 
-			CGPROGRAM
-			// compile directives
-			#pragma vertex tessvert_surf
-			#pragma fragment frag_surf
-			#pragma hull hs_surf
-			#pragma domain ds_surf
-			#pragma target 5.0
-			#pragma shader_feature FLIP_NORMAL
-			#pragma multi_compile_fog
-			#pragma multi_compile_fwdadd_fullshadows
-			#define UNITY_PASS_FORWARDADD
+        #include "UnityCG.cginc"
+ 
+        sampler2D _MainTex;
+        sampler2D _BumpTex;
+        sampler2D _MetallicTex;
+        sampler2D _SmoothnessTex;
+        sampler2D _EdgeTex;
+        sampler2D _AOTex;
+        sampler2D _EmissionTex;
 
-			#include "Tessellation.cginc"
-			#include "Struct.cginc"
-			#include "Vert.cginc"
-			#include "Tess.cginc"
-			#include "Frag.cginc"
-			ENDCG
-		}
-		
-		Pass {
-			Name "DEFERRED"
-			Tags { "LightMode" = "Deferred" }
+        float4 _Color;
+        float _Glossiness;
+        float _Metallic;
+        float _AOPower;
+        float _EdgePower;
+        
+        float _Parallax;
+        float _ParallaxBias;
+        float _EdgeLength;
 
+        struct Input {
+            float2 uv_MainTex;
+            float2 uv_BumpTex;
+            float2 uv_MetallicTex;
+            float2 uv_SmoothnessTex;
+            float2 uv_EdgeTex;
+            float2 uv_AOTex;
+            float2 uv_EmissionTex;
+        };
 
-			CGPROGRAM
-			// compile directives
-			#pragma vertex tessvert_surf
-			#pragma fragment frag_surf
-			#pragma hull hs_surf
-			#pragma domain ds_surf
-			#pragma target 5.0
-			#pragma shader_feature FLIP_NORMAL
-			#pragma exclude_renderers nomrt
-			#pragma multi_compile_prepassfinal
-			#pragma skip_variants FOG_LINEAR FOG_EXP FOG_EXP2
-			#define UNITY_PASS_DEFERRED
-
-			#include "Tessellation.cginc"
-			#include "Struct.cginc"
-			#include "Vert.cginc"
-			#include "Tess.cginc"
-			#include "Frag.cginc"
-			ENDCG
-		}
-		
-		Pass {
-			Name "ShadowCaster"
-			Tags { "LightMode" = "ShadowCaster" }
-			ZWrite On ZTest LEqual
-			
-			CGPROGRAM
-			// compile directives
-			#pragma vertex tessvert_surf
-			
-			#pragma fragment frag_surf
-			#pragma hull hs_surf
-			#pragma domain ds_surf
-			#pragma target 5.0
-			#pragma multi_compile_shadowcaster
-			#define UNITY_PASS_SHADOWCASTER
-			
-			#include "Tessellation.cginc"
-			#include "Struct.cginc"
-			#include "Vert.cginc"
-			#include "Tess.cginc"
-			#include "Frag.cginc"
-			ENDCG
-		}
-		
-		Pass{
-			Name "Meta"
-			Tags { "LightMode" = "Meta" }
-			Cull Off
-		
-			
-			CGPROGRAM
-			// compile directives
-			#pragma vertex vert_surf
-			#pragma fragment frag_surf
-			#pragma target 3.0
-			#pragma shader_feature FLIP_NORMAL
-			#pragma skip_variants FOG_LINEAR FOG_EXP FOG_EXP2
-			#define UNITY_PASS_META
-
-			#include "Struct.cginc"
-			#include "UnityMetaPass.cginc"
-			#include "Vert.cginc"
-			#include "Frag.cginc"
-			ENDCG
-		}
-		
-	}
-	FallBack "Materialize/Materialize_Standard"
+        void surf (Input IN, inout SurfaceOutputStandard o) {
+            fixed4 c = tex2D (_MainTex, IN.uv_MainTex);
+            o.Albedo = c.rgb * _Color.rgb;
+            o.Metallic = tex2D(_MetallicTex, IN.uv_MetallicTex).r * _Metallic;
+            o.Smoothness = tex2D(_SmoothnessTex, IN.uv_SmoothnessTex).r * _Glossiness;
+            o.Normal = UnpackNormal(tex2D(_BumpTex, IN.uv_BumpTex));
+            o.Occlusion = tex2D(_AOTex, IN.uv_AOTex).r * _AOPower;
+            o.Emission = tex2D(_EmissionTex, IN.uv_EmissionTex).rgb;
+        }
+ 
+        ENDCG
+    }
+    FallBack "Diffuse"
 }
