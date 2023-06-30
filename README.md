@@ -1,4 +1,4 @@
-<center><h2> De Gouden Foks </h2>
+<center><h2> De Gouden Foks </h2></center>
 
 *- This project is currently still under construction but with the speed of u all im sure it'll go speedily.*
 
@@ -7,4 +7,3 @@
 <!-- To add something to the todo list just use a "-" at the beginning and add a <br at the end to make a newline. It's simple!-->
 - Fix the elevator - Nate<br>
 - Fix the pool table - Nate
-</center>
