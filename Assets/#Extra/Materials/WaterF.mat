@@ -8,9 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WaterF
-  m_Shader: {fileID: 4800000, guid: 7e018b47cc1d059439656129107b3445, type: 3}
-  m_ShaderKeywords: _CAUSTICS_ON _DEPTHFOG_ON _DEPTH_EFFECTS_ON _FLOW_ON _GERSTNER_WAVES_ON
-    _NORMALMAP_1_ON _REFLECTIONS_ON _SPECULAR_ON
+  m_Shader: {fileID: 4800000, guid: 881e37927165995428be4713c77c0609, type: 3}
+  m_ShaderKeywords: _CAUSTICS_ON _CUBEMAPENABLE_ON _DEPTHFOG_ON _DEPTH_EFFECTS_ON
+    _FLOW_ON _GERSTNER_WAVES_ON _NORMALMAP_1_ON _REFLECTIONS_ON _SPECULAR_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -34,6 +34,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _CausticsTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CubeMap:
+        m_Texture: {fileID: 8900000, guid: 432d1d22b0f4ba9499a03df92e8dd430, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -112,12 +116,20 @@ Material:
         m_Texture: {fileID: 2800000, guid: b7359cc7e3e84444b88656ff6c166220, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NoiseTexture:
+        m_Texture: {fileID: 2800000, guid: 5b5333f9a1f19b345aeeb1ac3fb09000, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _NormalMap0:
         m_Texture: {fileID: 2800000, guid: 7ad1e725b3c53a34dae68f092ff297cf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap1:
         m_Texture: {fileID: 2800000, guid: 8c0fe4ffb1eaa3748a17395d8c9bd71a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 2800000, guid: ac0a61de5ee5aaa429edf16692a0445d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -133,6 +145,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RoughnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -157,6 +177,8 @@ Material:
     - _CausticsSurfaceFade: 100
     - _CausticsThreshold: 0
     - _CausticsToggle: 1
+    - _ChromaticAberration: 0.036
+    - _CubeMapEnable: 1
     - _CullMode: 0
     - _Cutoff: 0.5
     - _DepthEffects: 1
@@ -170,6 +192,7 @@ Material:
     - _EdgeFadeSSR: 0.1
     - _EdgeFadeToggle: 0
     - _EmissionMapStochasticToggle: 0
+    - _EmissionStregth: 0
     - _EmissionToggle: 0
     - _FlowMapUV: 0
     - _FlowSpeed: 4.63
@@ -193,8 +216,12 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _IndexofRefraction: 0.846
+    - _MaiSwitch: 0
     - _Metallic: 0.1
     - _Mode: 0
+    - _NoiseMapSize: 0
+    - _NoisePan: 0
     - _NoiseTexBlur: 0.8
     - _Normal0StochasticToggle: 0
     - _Normal1StochasticToggle: 0
@@ -203,8 +230,9 @@ Material:
     - _NormalMapOffset1: 0
     - _NormalStr0: 0.1
     - _NormalStr1: 0.2
+    - _NormalStrength: 0.2
     - _OcclusionStrength: 1
-    - _Opacity: 1
+    - _Opacity: 0
     - _OpaqueLights: 1
     - _Parallax: 0.02
     - _RainToggle: 0
@@ -258,6 +286,9 @@ Material:
     - _WaveStrength2: 0.1
     - _WaveStrengthGlobal: 0.3
     - _ZWrite: 1
+    - __dirty: 1
+    - _mattalic: 0.141
+    - _smooth: 0.8
     m_Colors:
     - _AngleTint: {r: 1, g: 1, b: 1, a: 1}
     - _BackfaceTint: {r: 1, g: 1, b: 1, a: 1}
@@ -277,6 +308,7 @@ Material:
     - _FoamTexScale: {r: 5, g: 5, b: 0, a: 0}
     - _FoamTexScroll: {r: 0.1, g: -0.1, b: 0, a: 0}
     - _FogTint: {r: 0.4433962, g: 0.10666606, b: 0.37418577, a: 1}
+    - _GlassTint: {r: 1, g: 0.6650944, b: 0.9948942, a: 0}
     - _LightDir: {r: 0, g: 0.75, b: 1, a: 0}
     - _MainTexScroll: {r: 0, g: 0.1, b: 0, a: 0}
     - _NoiseTexScale: {r: 3, g: 3, b: 0, a: 0}
@@ -285,6 +317,7 @@ Material:
     - _NormalMapScale1: {r: 4, g: 4, b: 0, a: 0}
     - _NormalMapScroll0: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _NormalMapScroll1: {r: -0.1, g: 0.1, b: 0, a: 0}
+    - _NormalPan: {r: 0, g: 0.5, b: 0, a: 0}
     - _Offset: {r: 0, g: 1, b: 0, a: 0}
     - _ReflCubeRotation: {r: 0, g: 0, b: 0, a: 0}
     - _ReflTint: {r: 1, g: 1, b: 1, a: 1}
@@ -292,3 +325,4 @@ Material:
     - _VoronoiOffset: {r: 0, g: 1, b: 0, a: 0}
     - _VoronoiScale: {r: 2, g: 2, b: 0, a: 0}
     - _VoronoiScroll: {r: 0, g: -0.25, b: 0, a: 0}
+    - _emission: {r: 1, g: 1, b: 1, a: 0}
