@@ -8,9 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GLASS
-  m_Shader: {fileID: 4800000, guid: 881e37927165995428be4713c77c0609, type: 3}
-  m_ShaderKeywords: BLURQUALITY_ULTRA _GRABPASS_ON _LIT_BASECOLOR_ON _REFLECTIONS_ON
-    _SPECULAR_HIGHLIGHTS_ON
+  m_Shader: {fileID: 4800000, guid: 4bc498bf3cdbcd0419815d28b94dc3e6, type: 3}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AlbedoMapreference_property_Color:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AlphaMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -214,9 +217,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - BlurQuality: 0
+    - DSGI: 0
+    - Instancing: 1
+    - LightmapFlags: 0
     - _ACES: 0
     - _AlphaMaskChannel: 3
     - _AlphaMaskOpacity: 1
+    - _AntiAliasingThresholdSm: 1
+    - _AntiAliasingVarianceSm: 0.01
     - _AreaLitRoughnessMult: 1
     - _AreaLitStrength: 1
     - _AreaLitToggle: 0
@@ -226,6 +234,7 @@ Material:
     - _BAKERY_LMSPEC: 0
     - _BAKERY_SHNONLINEAR: 0
     - _BakeryMode: 0
+    - _Bias: 0
     - _BicubicLightmap: 1
     - _BlendMode: 0
     - _Blur: 1
@@ -281,7 +290,7 @@ Material:
     - _GSAA: 0
     - _GSAAStrength: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 1
     - _GlossyReflections: 1
     - _HDRReflShad: 1
     - _HeightChannel: 3
@@ -298,6 +307,7 @@ Material:
     - _LitBaseColor: 1
     - _MaiSwitch: 0
     - _MetaCull: 0
+    - _Metaliic: 1
     - _Metallic: 1
     - _MetallicChannel: 2
     - _MetallicMult: 0
@@ -306,6 +316,7 @@ Material:
     - _NaNLmao: 0
     - _NoiseMapSize: 0
     - _NoisePan: 0
+    - _NormalMapSlider: 1
     - _NormalStrength: 0
     - _Occlusion: 1
     - _OcclusionChannel: 0
@@ -317,6 +328,7 @@ Material:
     - _Parallax: 0.02
     - _ParallaxOffset: 0
     - _ParallaxSteps: 25
+    - _Power: 4
     - _QueueOffset: 0
     - _RainToggle: 0
     - _ReflCubeOverrideToggle: 0
@@ -350,6 +362,7 @@ Material:
     - _SaturationDet: 1
     - _SaturationEmiss: 1
     - _SaturationPost: 1
+    - _Scale: 4
     - _ScatterAlbedoTint: 0
     - _ScatterAmbient: 0
     - _ScatterDist: 1
@@ -364,7 +377,7 @@ Material:
     - _SpecularToggle: 1
     - _Speed: 60
     - _SrcBlend: 1
-    - _Strength: 0.3
+    - _Strength: 0.75
     - _Subsurface: 0
     - _ThicknessMapPower: 1
     - _Transparency: 1
@@ -386,6 +399,7 @@ Material:
     - _UseAlphaMask: 0
     - _UseFresnel: 1
     - _UseHeight: 0
+    - _UseNormalMap: 0
     - _UseSmoothness: 0
     - _Workflow: 0
     - _WrappingFactor: 0.01
@@ -393,25 +407,36 @@ Material:
     - _YScale: 1.5
     - _ZTest: 4
     - _ZWrite: 1
-    - __dirty: 1
+    - __dirty: 0
     - _mattalic: 0.066
     - _smooth: 1
+    - footer_booth: 0
+    - footer_discord: 0
+    - footer_github: 0
+    - footer_patreon: 0
+    - m_Main: 1
+    - m_Rim: 1
+    - shader_is_using_thry_editor: 69
+    - shader_master_label: 0
+    - shader_properties_label_file: 0
     m_Colors:
     - _BaseColorTint: {r: 0, g: 1, b: 0.9301296, a: 0.22745098}
-    - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _Color1: {r: 1, g: 1, b: 1, a: 1}
     - _Color2: {r: 1, g: 1, b: 1, a: 1}
     - _Color3: {r: 1, g: 1, b: 1, a: 1}
     - _Color4: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DetailScroll: {r: 0, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0.0470588, g: 0.0470588, b: 0.0470588, a: 1}
     - _GlassTint: {r: 1, g: 0.6650944, b: 0.9948942, a: 0}
     - _GrabpassTint: {r: 1, g: 0.9647059, b: 1, a: 0.8235294}
     - _NormalPan: {r: 0, g: 0, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _RimCol: {r: 1, g: 1, b: 1, a: 1}
     - _ScatterCol: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularityTint: {r: 1, g: 0.5411765, b: 0.5729037, a: 0.09803922}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _TintReflShad: {r: 1, g: 1, b: 1, a: 1}
     - _UV0Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _UV1Scroll: {r: 0, g: 0, b: 0, a: 0}

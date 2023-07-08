@@ -8,14 +8,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M
-  m_Shader: {fileID: 4800000, guid: a74a946cd7289754db804d28fc6f2978, type: 3}
-  m_ShaderKeywords: BLURQUALITY_HIGH _GRABPASS_ON _LIT_BASECOLOR_ON _REFLECTIONS_ON
-    _SPECULAR_HIGHLIGHTS_ON
+  m_Shader: {fileID: 4800000, guid: fb794d627a1ed1a42a556d8c1cfdbe73, type: 3}
+  m_ShaderKeywords: BLURQUALITY_HIGH _ALPHAPREMULTIPLY_ON _GRABPASS_ON _LIT_BASECOLOR_ON
+    _REFLECTIONS_ON _SPECULAR_HIGHLIGHTS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -267,7 +268,7 @@ Material:
     - _DetailTriplanarFalloff: 1
     - _DetailUseSmoothness: 0
     - _DetailWorkflow: 0
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EdgeFade: 0.1
     - _EmissPulseSpeed: 1
     - _EmissPulseStrength: 1
@@ -279,7 +280,7 @@ Material:
     - _GSAA: 0
     - _GSAAStrength: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 1
     - _GlossyReflections: 1
     - _HDRReflShad: 1
     - _HeightChannel: 3
@@ -296,7 +297,7 @@ Material:
     - _LitBaseColor: 1
     - _MaiSwitch: 0
     - _MetaCull: 0
-    - _Metallic: 0.218
+    - _Metallic: 0.214
     - _MetallicChannel: 2
     - _MetallicMult: 0
     - _MirrorToggle: 0
@@ -385,13 +386,13 @@ Material:
     - _XScale: 1.5
     - _YScale: 1.5
     - _ZTest: 4
-    - _ZWrite: 1
+    - _ZWrite: 0
     - __dirty: 1
     - _mattalic: 0.018
     - _smooth: 1
     m_Colors:
     - _BaseColorTint: {r: 1, g: 0, b: 0.21404552, a: 1}
-    - _Color: {r: 0.15686275, g: 0.5803922, b: 0.827451, a: 0.84313726}
+    - _Color: {r: 0.78773576, g: 0.984659, b: 1, a: 0.02745098}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DetailScroll: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
