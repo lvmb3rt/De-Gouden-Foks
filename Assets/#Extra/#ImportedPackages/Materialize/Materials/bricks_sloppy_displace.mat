@@ -8,12 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: bricks_sloppy_displace
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: FLIP_NORMAL _EMISSION
-  m_LightmapFlags: 1
+  m_Shader: {fileID: 4800000, guid: 4884dd4f4d3472643af439cf0504948a, type: 3}
+  m_ShaderKeywords: FLIP_NORMAL
+  m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -92,16 +92,12 @@ Material:
     - _EdgeLength: 5
     - _EdgePower: 2
     - _FlipNormal: 1
-    - _GlossMapScale: 1
     - _Glossiness: 1.33
-    - _GlossyReflections: 1
     - _Metallic: 1
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.2
     - _ParallaxBias: 0.7
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1

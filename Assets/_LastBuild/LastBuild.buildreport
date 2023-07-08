@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!668709126 &-8314479352573824204
+BuiltAssetBundleInfoSet:
+  bundleInfos: []
+--- !u!1125 &1
+BuildReport:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LastBuild
+  m_Summary:
+    buildStartTime:
+      serializedVersion: 2
+      ticks: 638241297214943458
+    buildGUID: 00000000000000000000000000000000
+    platformName: Win64
+    platformGroupName: 
+    options: 0
+    assetBundleOptions: 32
+    outputPath: C:/Users/lvmb3rt/AppData/Local/Temp/DefaultCompany/De-Gouden-Foks
+    crc: 0
+    totalSize: 0
+    totalTimeTicks: 0
+    totalErrors: 0
+    totalWarnings: 0
+    buildType: 2
+    buildResult: 2
+  m_Files: []
+  m_BuildSteps:
+  - stepName: Build Asset Bundles
+    durationTicks: 95456208
+    depth: 0
+    messages: []
+  - stepName: Calculate asset bundles to be built
+    durationTicks: 15906383
+    depth: 1
+    messages: []
+  - stepName: Compile scripts
+    durationTicks: 48768822
+    depth: 1
+    messages: []
+  m_Appendices:
+  - {fileID: -8314479352573824204}

@@ -3,7 +3,32 @@ guid: 85d55799e4e7d2541b869c15d56d787f
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brush_CelVinyl
+    second: {fileID: 2100000, guid: 384ee74f86b89184a81f84ad2747c8c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brush_DiamondHull
+    second: {fileID: 2100000, guid: cff744691189c0d4ea28e92762ad3529, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brush_Dots
+    second: {fileID: 2100000, guid: 4f6abb6e2082c7248ba297d42bf8fe47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brush_Petal
+    second: {fileID: 2100000, guid: 66ad02aa4a90457418b2124712557fa0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brush_Wire
+    second: {fileID: 2100000, guid: 9506992c98aee8a44bf647b43029fa54, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -45,7 +70,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

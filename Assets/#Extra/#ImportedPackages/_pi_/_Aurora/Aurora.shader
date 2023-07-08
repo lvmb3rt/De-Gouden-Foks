@@ -25,7 +25,7 @@ Shader "_pi_/Aurora"
 
         ZWrite Off
         ZTest LEqual
-        Cull Back
+        Cull Front
         Blend SrcAlpha OneMinusSrcAlpha
 
         Pass
