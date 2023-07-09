@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Gold
   m_Shader: {fileID: 4800000, guid: cddaa3a02eb956746b502b80b76e92bc, type: 3}
-  m_ShaderKeywords: _BICUBIC_SAMPLING_ON
+  m_ShaderKeywords: _BICUBIC_SAMPLING_ON _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+    _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -33,7 +34,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5b48b1f57f08a1148835ea3238481a7a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAOMap:
@@ -101,11 +102,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d8a58ebd23efff549956ff712963947d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e63544998d277bc47869fd43862509da, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexSSR:
@@ -121,7 +122,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d9d192b1188bbea4785eb65f6d133004, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMask:
@@ -165,7 +166,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 875ccd5dbaf802f4fb3e3de4af01fd83, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ThicknessMap:
@@ -232,7 +233,7 @@ Material:
     - _GSAA: 0
     - _GSAAStrength: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.072
+    - _Glossiness: 0.328
     - _GlossyReflections: 1
     - _HDRReflShad: 1
     - _HeightChannel: 3
@@ -246,7 +247,7 @@ Material:
     - _LTCGI_DIFFUSE_OFF: 0
     - _LTCGI_SPECULAR_OFF: 0
     - _MetaCull: 0
-    - _Metallic: 0.96
+    - _Metallic: 1
     - _MetallicChannel: 2
     - _MetallicMult: 0
     - _MirrorToggle: 0
@@ -257,7 +258,7 @@ Material:
     - _OcclusionStrength: 1
     - _OcclusionUVSet: 0
     - _OpaqueLights: 1
-    - _Parallax: 0.02
+    - _Parallax: 0
     - _ParallaxOffset: 0
     - _ParallaxSteps: 25
     - _QueueOffset: 0
@@ -323,7 +324,7 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9245283, g: 0.86202544, b: 0.4753471, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
     - _DetailScroll: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

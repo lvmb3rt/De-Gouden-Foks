@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: GoldMarble
   m_Shader: {fileID: 4800000, guid: cddaa3a02eb956746b502b80b76e92bc, type: 3}
-  m_ShaderKeywords: _BICUBIC_SAMPLING_ON _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+  m_ShaderKeywords: _BICUBIC_SAMPLING_ON _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 32929e55c5e77824cb4f0b7cce085bda, type: 3}
+        m_Texture: {fileID: 2800000, guid: 573fb347840d30142a6589ce9cf2f6f7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAOMap:
@@ -101,11 +101,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 722dc9fbc65bddb44aabf9af65b36103, type: 3}
+        m_Texture: {fileID: 2800000, guid: 79a054502151b2f46875e4d867b05dcb, type: 3}
         m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 064e890f3861a4847b98cfb27effa37f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4570b8543ad816b41a6ac8b90698b62b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexSSR:
@@ -113,7 +113,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 81c4ecbf9db48a54397568359449b1ba, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PackedMap:
@@ -121,7 +121,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: cfd09f7643ab17646870a4b5cbbcb68b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMask:
@@ -165,7 +165,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8f224e305efa015489781aeceee4469b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ThicknessMap:
@@ -232,7 +232,7 @@ Material:
     - _GSAA: 0
     - _GSAAStrength: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.381
     - _GlossyReflections: 1
     - _HDRReflShad: 1
     - _HeightChannel: 3
@@ -257,7 +257,7 @@ Material:
     - _OcclusionStrength: 1
     - _OcclusionUVSet: 0
     - _OpaqueLights: 1
-    - _Parallax: 0.005
+    - _Parallax: 0
     - _ParallaxOffset: 0
     - _ParallaxSteps: 25
     - _QueueOffset: 0

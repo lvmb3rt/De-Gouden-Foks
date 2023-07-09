@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: WoodParquet
   m_Shader: {fileID: 4800000, guid: cddaa3a02eb956746b502b80b76e92bc, type: 3}
-  m_ShaderKeywords: _BICUBIC_SAMPLING_ON _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
+  m_ShaderKeywords: _BICUBIC_SAMPLING_ON _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+    _SPECGLOSSMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -105,7 +106,7 @@ Material:
         m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: dc8311f247ece504aa2a20c270c78bbd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexSSR:

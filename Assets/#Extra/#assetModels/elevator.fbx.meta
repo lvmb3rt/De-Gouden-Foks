@@ -3,7 +3,17 @@ guid: 746a440665289ee49b81a892daf0048c
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Elevator
+    second: {fileID: 2100000, guid: c565533b4bf23f641b2d5150244498a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LED
+    second: {fileID: 2100000, guid: c92d028fa290e134a9bcc6932e230689, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -45,7 +55,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
