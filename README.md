@@ -1,4 +1,4 @@
-<center><h1> De Gouden Foks </h1></center>
+![image](https://github.com/lvmb3rt/De-Gouden-Foks/assets/72808718/a91d1ad3-220d-445c-b659-e47be7c4b583)<center><h1> De Gouden Foks </h1></center>
 <p align="center"><img src="https://github.com/lvmb3rt/De-Gouden-Foks/blob/main/goldgfox.png?raw=true"></p>
 <center>The "Golden Fox" or "Gouden Foks" for Dutch is a club world built for VRChat but may be ported to other platforms at a later date</center>
 </br>
@@ -23,8 +23,10 @@
 <li> Fix clubhouse polys - cerberus423375
 <li> pretty garden stuff - Stavross#8620
 <li> radical golf course - .kannakobayashi
-<li> Assets tecturing and other - lvmb3rt
+<li> Assets texturing and other - lvmb3rt
 </ul>
 <h2>WE ARE MOVING TO A STANDARDISED FILE STRUCTURE USING EXAMPLE 1 FROM THE FOLLOWING</h2></br>
 https://unity.com/how-to/organizing-your-project
-<img src="https://unity.com/sites/default/files/styles/810_scale_width/public/2022-04/Folder%20structure%20example%201.JPG">
+<img src="https://github.com/lvmb3rt/De-Gouden-Foks/blob/main/Folder%20structure.JPG?raw=true">
+
+![Hotpot3](https://github.com/lvmb3rt/De-Gouden-Foks/assets/72808718/f14e0985-e0d0-4f08-adfe-65754b677333)
