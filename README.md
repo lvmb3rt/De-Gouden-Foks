@@ -1,4 +1,4 @@
-![image](https://github.com/lvmb3rt/De-Gouden-Foks/assets/72808718/a91d1ad3-220d-445c-b659-e47be7c4b583)<center><h1> De Gouden Foks </h1></center>
+<center><h1> De Gouden Foks </h1></center>
 <p align="center"><img src="https://github.com/lvmb3rt/De-Gouden-Foks/blob/main/goldgfox.png?raw=true"></p>
 <center>The "Golden Fox" or "Gouden Foks" for Dutch is a club world built for VRChat but may be ported to other platforms at a later date</center>
 </br>
@@ -29,4 +29,4 @@
 https://unity.com/how-to/organizing-your-project
 <img src="https://github.com/lvmb3rt/De-Gouden-Foks/blob/main/Folder%20structure.JPG?raw=true">
 
-![Hotpot3](https://github.com/lvmb3rt/De-Gouden-Foks/assets/72808718/f14e0985-e0d0-4f08-adfe-65754b677333)
+
