@@ -23,8 +23,10 @@
 <li> Fix clubhouse polys - cerberus423375
 <li> pretty garden stuff - Stavross#8620
 <li> radical golf course - .kannakobayashi
-<li> Assets tecturing and other - lvmb3rt
+<li> Assets texturing and other - lvmb3rt
 </ul>
 <h2>WE ARE MOVING TO A STANDARDISED FILE STRUCTURE USING EXAMPLE 1 FROM THE FOLLOWING</h2></br>
 https://unity.com/how-to/organizing-your-project
-<img src="https://unity.com/sites/default/files/styles/810_scale_width/public/2022-04/Folder%20structure%20example%201.JPG">
+<img src="https://github.com/lvmb3rt/De-Gouden-Foks/blob/main/Folder%20structure.JPG?raw=true">
+
+
