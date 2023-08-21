@@ -27,12 +27,12 @@ TagManager:
   - reserved2
   - reserved3
   - reserved4
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - antCol0
+  - antCol1
+  - antCol2
+  - antCol3
+  - antCol4
+  - antCol5
   - 
   - 
   - 
@@ -40,4 +40,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: floorCol0
+    uniqueID: 2441430783
+    locked: 0
+  - name: floorCol1
+    uniqueID: 1449300303
+    locked: 0
+  - name: floorCol2
+    uniqueID: 961661381
+    locked: 0
+  - name: floorCol3
+    uniqueID: 3499981211
+    locked: 0
+  - name: floorCol4
+    uniqueID: 4159852597
+    locked: 0
+  - name: floorCol5
+    uniqueID: 1523744763
     locked: 0
