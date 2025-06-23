@@ -2,25 +2,31 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Glass
   m_Shader: {fileID: 4800000, guid: 4bc498bf3cdbcd0419815d28b94dc3e6, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _NormalMap_ON
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHAPREMULTIPLY_ON
+  - _EMISSION
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoMapreference_property_Color:
-        m_Texture: {fileID: 2800000, guid: 3d699402c3d735c44abe9b845bb72640, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AlphaMask:
@@ -215,6 +221,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - BlurQuality: 0
     - DSGI: 0
@@ -234,7 +241,7 @@ Material:
     - _BAKERY_LMSPEC: 0
     - _BAKERY_SHNONLINEAR: 0
     - _BakeryMode: 0
-    - _Bias: 0
+    - _Bias: 0.212
     - _BicubicLightmap: 1
     - _BlendMode: 0
     - _Blur: 1
@@ -290,7 +297,7 @@ Material:
     - _GSAA: 0
     - _GSAAStrength: 1
     - _GlossMapScale: 1
-    - _Glossiness: 1
+    - _Glossiness: 0.874
     - _GlossyReflections: 1
     - _HDRReflShad: 1
     - _HeightChannel: 3
@@ -307,7 +314,7 @@ Material:
     - _LitBaseColor: 1
     - _MaiSwitch: 0
     - _MetaCull: 0
-    - _Metaliic: 1
+    - _Metaliic: 0.016
     - _Metallic: 1
     - _MetallicChannel: 2
     - _MetallicMult: 0
@@ -362,7 +369,7 @@ Material:
     - _SaturationDet: 1
     - _SaturationEmiss: 1
     - _SaturationPost: 1
-    - _Scale: 0.42
+    - _Scale: 0.02
     - _ScatterAlbedoTint: 0
     - _ScatterAmbient: 0
     - _ScatterDist: 1
@@ -377,7 +384,7 @@ Material:
     - _SpecularToggle: 1
     - _Speed: 60
     - _SrcBlend: 1
-    - _Strength: 0.045
+    - _Strength: 0.188
     - _Subsurface: 0
     - _ThicknessMapPower: 1
     - _Transparency: 1
@@ -399,7 +406,7 @@ Material:
     - _UseAlphaMask: 0
     - _UseFresnel: 1
     - _UseHeight: 0
-    - _UseNormalMap: 1
+    - _UseNormalMap: 0
     - _UseSmoothness: 0
     - _Workflow: 0
     - _WrappingFactor: 0.01
@@ -446,3 +453,4 @@ Material:
     - _UV5Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _UVRimMaskScroll: {r: 0, g: 0, b: 0, a: 0}
     - _emission: {r: 1, g: 1, b: 1, a: 0}
+  m_BuildTextureStacks: []

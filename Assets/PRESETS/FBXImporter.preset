@@ -14,59 +14,11 @@ Preset:
   m_Properties:
   - target: {fileID: 0}
     propertyPath: m_ExternalObjects.Array.size
-    value: 3
+    value: 0
     objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[0].first.type
-    value: UnityEngine:Material
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[0].first.assembly
-    value: UnityEngine.CoreModule
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[0].first.name
-    value: Gold
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[0].second
-    value: 
-    objectReference: {fileID: 2100000, guid: 7ef3b4d7f69520f409d4e58d939f2d8e, type: 2}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[1].first.type
-    value: UnityEngine:Material
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[1].first.assembly
-    value: UnityEngine.CoreModule
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[1].first.name
-    value: Lamp
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[1].second
-    value: 
-    objectReference: {fileID: 2100000, guid: 9e191e62d7316b1478628a0f3dbe9c87, type: 2}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[2].first.type
-    value: UnityEngine:Material
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[2].first.assembly
-    value: UnityEngine.CoreModule
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[2].first.name
-    value: Pole
-    objectReference: {fileID: 0}
-  - target: {fileID: 0}
-    propertyPath: m_ExternalObjects.Array.data[2].second
-    value: 
-    objectReference: {fileID: 2100000, guid: 02791278684bc744e8ae0a022c92585c, type: 2}
   - target: {fileID: 0}
     propertyPath: m_MaterialImportMode
-    value: 1
+    value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_MaterialName
@@ -94,6 +46,10 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_OptimizeGameObjects
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RemoveConstantScaleCurves
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -178,11 +134,11 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_MeshCompression
-    value: 0
+    value: 2
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_AddColliders
-    value: 0
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_UseSRGBMaterialColor
@@ -190,6 +146,10 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_SortHierarchyByName
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ImportPhysicalCameras
     value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -206,6 +166,10 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_ImportLights
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_NodeNameCollisionStrategy
     value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
@@ -229,6 +193,10 @@ Preset:
     value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: bakeAxisConversion
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_PreserveHierarchy
     value: 0
     objectReference: {fileID: 0}
@@ -243,6 +211,10 @@ Preset:
   - target: {fileID: 0}
     propertyPath: minBoneWeight
     value: 0.001
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: optimizeBones
+    value: 1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: meshOptimizationFlags
@@ -265,12 +237,28 @@ Preset:
     value: 88
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: secondaryUVMarginMethod
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: secondaryUVMinLightmapResolution
+    value: 40
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: secondaryUVMinObjectScale
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: secondaryUVPackMargin
     value: 4
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: m_UseFileScale
     value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_StrictVertexDataChecks
+    value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: normalSmoothAngle
@@ -385,6 +373,18 @@ Preset:
     value: 0
     objectReference: {fileID: 0}
   - target: {fileID: 0}
+    propertyPath: m_AddHumanoidExtraRootOnlyWhenUsingAvatar
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ImportBlendShapeDeformPercent
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RemapMaterialsIfMaterialImportModeIsNone
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
     propertyPath: m_AdditionalBone
     value: 0
     objectReference: {fileID: 0}
@@ -400,3 +400,4 @@ Preset:
     propertyPath: m_AssetBundleVariant
     value: 
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []

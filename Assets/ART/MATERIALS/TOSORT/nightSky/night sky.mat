@@ -2,14 +2,18 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: night sky
   m_Shader: {fileID: 4800000, guid: c76f60378f39d374b990d98a610053e6, type: 3}
-  m_ShaderKeywords: _BICUBIC_SAMPLING_ON
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _BICUBIC_SAMPLING_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -17,6 +21,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - ALWAYS
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -117,7 +122,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8900000, guid: 0f2c26f2c59a3c64082156b9dac337c9, type: 3}
+        m_Texture: {fileID: 8900000, guid: fdfec72fc94537644ab42c8d205710ad, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -204,6 +209,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _ACES: 0
     - _AlphaMaskChannel: 3
@@ -310,8 +316,8 @@ Material:
     - _RippleStr: 1
     - _Rotation: 183
     - _RotationSpeed: 10
-    - _RotationSpeedX: 0.015
-    - _RotationSpeedY: 0.008
+    - _RotationSpeedX: 0.0034
+    - _RotationSpeedY: 0.0025
     - _RoughnessChannel: 1
     - _RoughnessMult: 0
     - _SSR: 0
@@ -371,3 +377,4 @@ Material:
     - _UV4Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _UV5Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _UVRimMaskScroll: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
