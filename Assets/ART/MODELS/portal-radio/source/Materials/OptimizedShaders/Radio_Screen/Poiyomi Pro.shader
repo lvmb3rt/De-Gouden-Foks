@@ -153,6 +153,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/be746c736f594db498e032288568222c"
 		[HideInInspector][ThryToggle(VIGNETTE_MASKED)]_ShadingEnabled ("Enable Shading", Float) = 1
 		[DoNotAnimate][KeywordEnum(TextureRamp, Multilayer Math, Wrapped, Skin, ShadeMap, Flat, Realistic, Cloth, SDF)] _LightingMode ("Lighting Type", Float) = 5
 		_LightingShadowColor ("Shadow Tint--{condition_showS:(_LightingMode!=4 && _LightingMode!=1 && _LightingMode!=5)}", Color) = (1, 1, 1)
+		[ToggleUI]_ForceFlatRampedLightmap ("Force Ramped Lightmap--{condition_showS:(_LightingMode==5)}", Range(0, 1)) = 1
 		_ShadowStrength ("Shadow Strength--{condition_showS:(_LightingMode<=4 || _LightingMode==8)}", Range(0, 1)) = 1
 		_LightingIgnoreAmbientColor ("Ignore Indirect Shadow Color--{condition_showS:(_LightingMode<=3 || _LightingMode==8)}", Range(0, 1)) = 1
 		[Space(15)]
@@ -170,6 +171,80 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/be746c736f594db498e032288568222c"
 		[HideInInspector] m_end_PoiShading ("Shading", Float) = 0
 		[HideInInspector] m_OutlineCategory (" Outlines--{reference_property:_EnableOutlines,button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/outlines/main},hover:Documentation}}", Float) = 0
 		[HideInInspector] m_specialFXCategory ("Special FX", Float) = 0
+		[HideInInspector] m_start_emissionOptions (" Emission 0--{reference_property:_EnableEmission,button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/special-fx/emission},hover:Documentation}}", Float) = 0
+		[HideInInspector][ThryToggle(_EMISSION)]
+		_EnableEmission ("Enable Emission 0", Float) = 0
+		[sRGBWarning]_EmissionMask ("Emission Mask--{reference_properties:[_EmissionMaskPan, _EmissionMaskUV, _EmissionMaskChannel, _EmissionMaskInvert, _EmissionMask0GlobalMask]}", 2D) = "white" { }
+		[HideInInspector][Vector2]_EmissionMaskPan ("Panning", Vector) = (0, 0, 0, 0)
+		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos, 5, Local Pos, 8, Polar UV, 6, Distorted UV, 7)] _EmissionMaskUV ("UV", Int) = 0
+		[HideInInspector][Enum(R, 0, G, 1, B, 2, A, 3)]_EmissionMaskChannel ("Channel", Float) = 0
+		[HideInInspector][ToggleUI]_EmissionMaskInvert ("Invert", Float) = 0
+		[HideInInspector][ThryWideEnum(Off, 0, 1R, 1, 1G, 2, 1B, 3, 1A, 4, 2R, 5, 2G, 6, 2B, 7, 2A, 8, 3R, 9, 3G, 10, 3B, 11, 3A, 12, 4R, 13, 4G, 14, 4B, 15, 4A, 16)] _EmissionMask0GlobalMask ("Global Mask--{reference_property:_EmissionMask0GlobalMaskBlendType}", Int) = 0
+		[HideInInspector][ThryWideEnum(Add, 7, Subtract, 1, Multiply, 2, Divide, 3, Min, 4, Max, 5, Average, 6, Replace, 0)]_EmissionMask0GlobalMaskBlendType ("Blending", Range(0, 1)) = 2
+		[HDR]_EmissionColor ("Emission Color--{reference_property:_EmissionColorThemeIndex}", Color) = (1, 1, 1, 1)
+		[HideInInspector][ThryWideEnum(Off, 0, Theme Color 0, 1, Theme Color 1, 2, Theme Color 2, 3, Theme Color 3, 4, ColorChord 0, 5, ColorChord 1, 6, ColorChord 2, 7, ColorChord 3, 8, AL Theme 0, 9, AL Theme 1, 10, AL Theme 2, 11, AL Theme 3, 12)] _EmissionColorThemeIndex ("", Int) = 0
+		[sRGBWarning(true)][Gradient]_EmissionMap ("Emission Map--{reference_properties:[_EmissionMapPan, _EmissionMapUV]}", 2D) = "white" { }
+		[HideInInspector][Vector2]_EmissionMapPan ("Panning", Vector) = (0, 0, 0, 0)
+		[HideInInspector][ThryWideEnum(UV0, 0, UV1, 1, UV2, 2, UV3, 3, Panosphere, 4, World Pos, 5, Local Pos, 8, Polar UV, 6, Distorted UV, 7)] _EmissionMapUV ("UV", Int) = 0
+		_EmissionStrength ("Emission Strength", Range(0, 20)) = 0
+		[ToggleUI]_EmissionBaseColorAsMap ("Use Base Colors", Float) = 0
+		[ToggleUI]_EmissionReplace0 ("Override Base Color", Float) = 0
+		_EmissionFluorescence ("Fluorescence", Range(0, 1)) = 0
+		[HideInInspector] s_start_EmissionHueShift0 ("Color Adjust--{reference_property:_EmissionHueShiftEnabled,persistent_expand:true,default_expand:false}", Float) = 0
+		[HideInInspector][ToggleUI]_EmissionHueShiftEnabled ("Hue Shift", Float) = 0
+		[ThryWideEnum(OKLab, 0, HSV, 1)] _EmissionHueShiftColorSpace ("Color Space", Int) = 0
+		[ThryWideEnum(Hue Select, 0, Hue Shift, 1)] _EmissionHueSelectOrShift ("Select or Shift", Int) = 1
+		_EmissionSaturation ("Saturation", Range(-1, 10)) = 0
+		_EmissionHueShift ("Hue Shift", Range(0, 1)) = 0
+		_EmissionHueShiftSpeed ("Hue Shift Speed", Float) = 0
+		[HideInInspector] s_end_EmissionHueShift0 ("", Float) = 0
+		[HideInInspector] s_start_EmissionCenterOut0 ("Center Out--{reference_property:_EmissionCenterOutEnabled,persistent_expand:true,default_expand:false}", Float) = 0
+		[HideInInspector][ToggleUI]_EmissionCenterOutEnabled ("Center Out", Float) = 0
+		_EmissionCenterOutSpeed ("Flow Speed", Float) = 5
+		[HideInInspector] s_end_EmissionCenterOut0 ("", Float) = 0
+		[HideInInspector] s_start_EmissionLightBased0 ("Light Based--{reference_property:_EnableGITDEmission,persistent_expand:true,default_expand:false}", Float) = 0
+		[HideInInspector][ToggleUI]_EnableGITDEmission ("Light Based", Float) = 0
+		[Enum(World, 0, Mesh, 1)] _GITDEWorldOrMesh ("Lighting Type", Int) = 0
+		_GITDEMinEmissionMultiplier ("Min Emission Multiplier", Range(0, 1)) = 1
+		_GITDEMaxEmissionMultiplier ("Max Emission Multiplier", Range(0, 1)) = 0
+		_GITDEMinLight ("Min Lighting", Range(0, 1)) = 0
+		_GITDEMaxLight ("Max Lighting", Range(0, 1)) = 1
+		[HideInInspector] s_end_EmissionLightBased0 ("", Float) = 0
+		[HideInInspector] s_start_EmissionBlinking0 ("Blinking--{reference_property:_EmissionBlinkingEnabled,persistent_expand:true,default_expand:false}", Float) = 0
+		[HideInInspector][ToggleUI]_EmissionBlinkingEnabled ("Blinking", Float) = 0
+		_EmissiveBlink_Min ("Emissive Blink Min", Float) = 0
+		_EmissiveBlink_Max ("Emissive Blink Max", Float) = 1
+		_EmissiveBlink_Velocity ("Emissive Blink Velocity", Float) = 4
+		_EmissionBlinkingOffset ("Offset", Float) = 0
+		[HideInInspector] s_end_EmissionBlinking0 ("", Float) = 0
+		[HideInInspector] s_start_ScrollingEmission0 ("Scrolling--{reference_property:_ScrollingEmission,persistent_expand:true,default_expand:false}", Float) = 0
+		[HideInInspector][ToggleUI] _ScrollingEmission ("Scrolling", Float) = 0
+		[ToggleUI]_EmissionScrollingUseCurve ("Use Curve", float) = 0
+		[Curve]_EmissionScrollingCurve ("Curve--{condition_showS:(_EmissionScrollingUseCurve==1)}", 2D) = "white" { }
+		[ToggleUI]_EmissionScrollingVertexColor ("VColor as position", float) = 0
+		_EmissiveScroll_Direction ("Direction", Vector) = (0, -10, 0, 0)
+		_EmissiveScroll_Width ("Width", Float) = 10
+		_EmissiveScroll_Velocity ("Velocity", Float) = 10
+		_EmissiveScroll_Interval ("Interval", Float) = 20
+		_EmissionScrollingOffset ("Offset", Float) = 0
+		[HideInInspector] s_end_ScrollingEmission0 ("", Float) = 0
+		[Space(4)]
+		[ThryToggleUI(true)] _EmissionAL0Enabled ("<size=13><b>  Audio Link</b></size>--{ condition_showS:_EnableAudioLink==1}", Float) = 0
+		[HideInInspector] s_start_EmissionAL0Multiply ("Strength Multiply--{persistent_expand:true,default_expand:false, condition_showS:(_EmissionAL0Enabled==1 && _EnableAudioLink==1)}", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3, Volume, 4)] _EmissionAL0MultipliersBand ("Band", Int) = 0
+		[VectorLabel(Min, Max)]_EmissionAL0Multipliers ("Multiplier", Vector) = (1, 1, 0, 0)
+		[HideInInspector] s_end_EmissionAL0Multiply ("Strength Multiply", Float) = 0
+		[HideInInspector] s_start_EmissionAL0Add ("Strength Add--{persistent_expand:true,default_expand:false, condition_showS:(_EmissionAL0Enabled==1 && _EnableAudioLink==1)}", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3, Volume, 4)] _EmissionAL0StrengthBand ("Band", Int) = 0
+		[VectorLabel(Min, Max)]_EmissionAL0StrengthMod ("Strength", Vector) = (0, 0, 0, 0)
+		[HideInInspector] s_end_EmissionAL0Add ("Strength Add", Float) = 0
+		[HideInInspector] s_start_EmissionAL0COut ("Center Out--{persistent_expand:true,default_expand:false, condition_showS:(_EmissionAL0Enabled==1 && _EnableAudioLink==1)}", Float) = 0
+		[Enum(Bass, 0, Low Mid, 1, High Mid, 2, Treble, 3, Volume, 4)] _AudioLinkEmission0CenterOutBand ("Band", Int) = 0
+		[VectorLabel(Min, Max)] _AudioLinkEmission0CenterOut ("Strength", Vector) = (0, 0, 0, 0)
+		_AudioLinkEmission0CenterOutSize ("Intensity Threshold", Range(0, 1)) = 0
+		_AudioLinkEmission0CenterOutDuration ("Duration", Range(-1, 1)) = 1
+		[HideInInspector] s_end_EmissionAL0COut ("Center Out", Float) = 0
+		[HideInInspector] m_end_emissionOptions ("", Float) = 0
 		[HideInInspector] m_AudioLinkCategory (" Audio Link--{reference_property:_EnableAudioLink, button_help:{text:Tutorial,action:{type:URL,data:https://www.poiyomi.com/audio-link/},hover:Documentation}}", Float) = 0
 		[HideInInspector] m_start_audioLink ("Audio Link", Float) = 0
 		[HideInInspector][ThryToggle(POI_AUDIOLINK)] _EnableAudioLink ("Enabled", Float) = 0
@@ -3284,12 +3359,12 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/be746c736f594db498e032288568222c"
 					colorAndMask.a = customBlend(colorAndMask.a, poiMods.globalMask[0.0-1], 2.0);
 				}
 				float2 uv = poiMesh.uv[2.0];
-				float2 decalCenter = float4(0,0,1,1);
+				float2 decalCenter = float4(0.5,0.5,1,1);
 				float theta = radians(0.0 + _Time.z * 0.0);
 				float cs = cos(theta);
 				float sn = sin(theta);
 				uv = float2((uv.x - decalCenter.x) * cs - (uv.y - decalCenter.y) * sn + decalCenter.x, (uv.x - decalCenter.x) * sn + (uv.y - decalCenter.y) * cs + decalCenter.y);
-				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0,0,1,1), float4(1,1,1,1).yw / 2 + float4(0,0,1,1), float2(0, 0), float2(1, 1));
+				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0.5,0.5,1,1), float4(1,1,1,1).yw / 2 + float4(0.5,0.5,1,1), float2(0, 0), float2(1, 1));
 				float4 audioLinkMask = 1.0;
 				float2 aluv = uv;
 				if (0.0 == 1)
@@ -3352,6 +3427,64 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/be746c736f594db498e032288568222c"
 			}
 			#endif
 			#endif
+			float calculateGlowInTheDark(in float minLight, in float maxLight, in float minEmissionMultiplier, in float maxEmissionMultiplier, in float enabled, in float worldOrMesh, in PoiLight poiLight)
+			{
+				float glowInTheDarkMultiplier = 1;
+				if (enabled)
+				{
+					float3 lightValue = worldOrMesh ? calculateluminance(poiLight.finalLighting.rgb) : calculateluminance(poiLight.directColor.rgb);
+					float gitdeAlpha = saturate(inverseLerp(minLight, maxLight, lightValue));
+					glowInTheDarkMultiplier = lerp(minEmissionMultiplier, maxEmissionMultiplier, gitdeAlpha);
+				}
+				return glowInTheDarkMultiplier;
+			}
+			float calculateScrollingEmission(in float3 direction, in float velocity, in float interval, in float scrollWidth, float offset, float3 position)
+			{
+				scrollWidth = max(scrollWidth, 0);
+				float phase = 0;
+				phase = dot(position, direction);
+				phase -= (_Time.y + offset) * velocity;
+				phase /= interval;
+				phase -= floor(phase);
+				phase = saturate(phase);
+				return (pow(phase, scrollWidth) + pow(1 - phase, scrollWidth * 4)) * 0.5;
+			}
+			float calculateBlinkingEmission(in float blinkMin, in float blinkMax, in float blinkVelocity, float offset)
+			{
+				float amplitude = (blinkMax - blinkMin) * 0.5f;
+				float base = blinkMin + amplitude;
+				return sin((_Time.y + offset) * blinkVelocity) * amplitude + base;
+			}
+			void applyALEmmissionStrength(in PoiMods poiMods, inout float emissionStrength, in float2 emissionStrengthMod, in float emissionStrengthBand, in float2 _EmissionALMultipliers, in float _EmissionALMultipliersBand, in float enabled)
+			{
+				#ifdef POI_AUDIOLINK
+				if (poiMods.audioLinkAvailable && enabled)
+				{
+					emissionStrength += lerp(emissionStrengthMod.x, emissionStrengthMod.y, poiMods.audioLink[emissionStrengthBand]);
+					emissionStrength *= lerp(_EmissionALMultipliers.x, _EmissionALMultipliers.y, poiMods.audioLink[_EmissionALMultipliersBand]);
+				}
+				#endif
+			}
+			void applyALCenterOutEmission(in PoiMods poiMods, in float nDotV, inout float emissionStrength, in float size, in float band, in float2 emissionToAdd, in float enabled, in float duration)
+			{
+				#ifdef POI_AUDIOLINK
+				if (poiMods.audioLinkAvailable && enabled)
+				{
+					float intensity;
+					[flatten]
+					if (duration >= 0)
+					{
+						intensity = getBandAtTime(band, saturate(remap(nDotV, 1, 0, 0, duration)), size);
+					}
+					else
+					{
+						duration *= -1;
+						intensity = getBandAtTime(band, saturate(remap(pow(nDotV, 2), 0, 1 + duration, 0, duration)), size);
+					}
+					emissionStrength += lerp(emissionToAdd[0], emissionToAdd[1], intensity);
+				}
+				#endif
+			}
 			float4 frag(VertexOut i, uint facing : SV_IsFrontFace) : SV_Target
 			{
 				UNITY_SETUP_INSTANCE_ID(i);
@@ -3952,6 +4085,12 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/be746c736f594db498e032288568222c"
 				}
 				poiFragData.finalColor = poiFragData.baseColor;
 				poiFragData.finalColor = poiFragData.baseColor * poiLight.finalLighting;
+				#if defined(_EMISSION)|| defined(POI_EMISSION_1)|| defined(POI_EMISSION_2)|| defined(POI_EMISSION_3)
+				float3 emissionBaseReplace = 0;//<ms_no_postfix>
+				#endif
+				#if defined(_EMISSION)|| defined(POI_EMISSION_1)|| defined(POI_EMISSION_2)|| defined(POI_EMISSION_3)
+				poiFragData.finalColor.rgb = lerp(poiFragData.finalColor.rgb, saturate(emissionBaseReplace), poiMax(emissionBaseReplace));
+				#endif
 				if (0.0 == 0)
 				{
 					UNITY_APPLY_FOG(i.fogCoord, poiFragData.finalColor);
@@ -6667,12 +6806,12 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/be746c736f594db498e032288568222c"
 					colorAndMask.a = customBlend(colorAndMask.a, poiMods.globalMask[0.0-1], 2.0);
 				}
 				float2 uv = poiMesh.uv[2.0];
-				float2 decalCenter = float4(0,0,1,1);
+				float2 decalCenter = float4(0.5,0.5,1,1);
 				float theta = radians(0.0 + _Time.z * 0.0);
 				float cs = cos(theta);
 				float sn = sin(theta);
 				uv = float2((uv.x - decalCenter.x) * cs - (uv.y - decalCenter.y) * sn + decalCenter.x, (uv.x - decalCenter.x) * sn + (uv.y - decalCenter.y) * cs + decalCenter.y);
-				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0,0,1,1), float4(1,1,1,1).yw / 2 + float4(0,0,1,1), float2(0, 0), float2(1, 1));
+				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0.5,0.5,1,1), float4(1,1,1,1).yw / 2 + float4(0.5,0.5,1,1), float2(0, 0), float2(1, 1));
 				float4 audioLinkMask = 1.0;
 				float2 aluv = uv;
 				if (0.0 == 1)
@@ -9687,12 +9826,12 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/be746c736f594db498e032288568222c"
 					colorAndMask.a = customBlend(colorAndMask.a, poiMods.globalMask[0.0-1], 2.0);
 				}
 				float2 uv = poiMesh.uv[2.0];
-				float2 decalCenter = float4(0,0,1,1);
+				float2 decalCenter = float4(0.5,0.5,1,1);
 				float theta = radians(0.0 + _Time.z * 0.0);
 				float cs = cos(theta);
 				float sn = sin(theta);
 				uv = float2((uv.x - decalCenter.x) * cs - (uv.y - decalCenter.y) * sn + decalCenter.x, (uv.x - decalCenter.x) * sn + (uv.y - decalCenter.y) * cs + decalCenter.y);
-				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0,0,1,1), float4(1,1,1,1).yw / 2 + float4(0,0,1,1), float2(0, 0), float2(1, 1));
+				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0.5,0.5,1,1), float4(1,1,1,1).yw / 2 + float4(0.5,0.5,1,1), float2(0, 0), float2(1, 1));
 				float4 audioLinkMask = 1.0;
 				float2 aluv = uv;
 				if (0.0 == 1)

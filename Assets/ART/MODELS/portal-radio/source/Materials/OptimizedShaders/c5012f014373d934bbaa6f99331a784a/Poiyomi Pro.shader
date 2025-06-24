@@ -3324,12 +3324,12 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/c5012f014373d934bbaa6f99331a784a"
 					colorAndMask.a = customBlend(colorAndMask.a, poiMods.globalMask[0.0-1], 2.0);
 				}
 				float2 uv = poiMesh.uv[2.0];
-				float2 decalCenter = float4(0,0,1,1);
+				float2 decalCenter = float4(0.5,0.5,1,1);
 				float theta = radians(0.0 + _Time.z * 0.0);
 				float cs = cos(theta);
 				float sn = sin(theta);
 				uv = float2((uv.x - decalCenter.x) * cs - (uv.y - decalCenter.y) * sn + decalCenter.x, (uv.x - decalCenter.x) * sn + (uv.y - decalCenter.y) * cs + decalCenter.y);
-				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0,0,1,1), float4(1,1,1,1).yw / 2 + float4(0,0,1,1), float2(0, 0), float2(1, 1));
+				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0.5,0.5,1,1), float4(1,1,1,1).yw / 2 + float4(0.5,0.5,1,1), float2(0, 0), float2(1, 1));
 				float4 audioLinkMask = 1.0;
 				float2 aluv = uv;
 				if (0.0 == 1)
@@ -3377,13 +3377,13 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/c5012f014373d934bbaa6f99331a784a"
 				float volumeColorSrc = audioLinkMask.g;
 				if (1.0 == 1) volumeColorSrc = audioLinkMask.r;
 				if (1.0 == 2) volumeColorSrc = audioVal;
-				float3 lowColor = float4(0,0,1,1).rgb * poiThemeColor(poiMods, float4(0,0,1,1).rgb, 0.0);
+				float3 lowColor = float4(0.2991411,0,1,1).rgb * poiThemeColor(poiMods, float4(0.2991411,0,1,1).rgb, 0.0);
 				float3 midColor = float4(0,1,0,1).rgb * poiThemeColor(poiMods, float4(0,1,0,1).rgb, 0.0);
 				float3 highColor = float4(1,0,0,1).rgb * poiThemeColor(poiMods, float4(1,0,0,1).rgb, 0.0);
 				float3 volumeColor = lerp(lowColor, midColor, saturate(volumeColorSrc * 2));
 				volumeColor = lerp(volumeColor, highColor, saturate(volumeColorSrc * 2 - 1));
-				float3 emissionColor = lerp(lowColor * 0.0, midColor * 0.0, saturate(volumeColorSrc * 2));
-				emissionColor = lerp(emissionColor, highColor * 0.0, saturate(volumeColorSrc * 2 - 1));
+				float3 emissionColor = lerp(lowColor * 0.5, midColor * 0.5, saturate(volumeColorSrc * 2));
+				emissionColor = lerp(emissionColor, highColor * 0.5, saturate(volumeColorSrc * 2 - 1));
 				#if defined(POI_PASS_BASE) || defined(POI_PASS_ADD)
 				poiFragData.emission += emissionColor * audioLinkValue;
 				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor, customBlend(poiFragData.baseColor, volumeColor * colorAndMask.rgb, 0.0), saturate(1.0 * audioLinkValue));
@@ -3455,7 +3455,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/c5012f014373d934bbaa6f99331a784a"
 			{
 				float3 emission0 = 0;
 				float emissionAlpha = 1;
-				float emissionStrength0 = 1.0;
+				float emissionStrength0 = 0.5;
 				float3 emissionColor0 = 0;
 				applyALEmmissionStrength(poiMods, emissionStrength0, float4(0,0,0,0), 0.0, float4(0.1,1,0,0), 4.0, 1.0);
 				applyALCenterOutEmission(poiMods, poiLight.nDotV, emissionStrength0, 0.0, 0.0, float4(0,0,0,0), 1.0, 1.0);
@@ -6760,12 +6760,12 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/c5012f014373d934bbaa6f99331a784a"
 					colorAndMask.a = customBlend(colorAndMask.a, poiMods.globalMask[0.0-1], 2.0);
 				}
 				float2 uv = poiMesh.uv[2.0];
-				float2 decalCenter = float4(0,0,1,1);
+				float2 decalCenter = float4(0.5,0.5,1,1);
 				float theta = radians(0.0 + _Time.z * 0.0);
 				float cs = cos(theta);
 				float sn = sin(theta);
 				uv = float2((uv.x - decalCenter.x) * cs - (uv.y - decalCenter.y) * sn + decalCenter.x, (uv.x - decalCenter.x) * sn + (uv.y - decalCenter.y) * cs + decalCenter.y);
-				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0,0,1,1), float4(1,1,1,1).yw / 2 + float4(0,0,1,1), float2(0, 0), float2(1, 1));
+				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0.5,0.5,1,1), float4(1,1,1,1).yw / 2 + float4(0.5,0.5,1,1), float2(0, 0), float2(1, 1));
 				float4 audioLinkMask = 1.0;
 				float2 aluv = uv;
 				if (0.0 == 1)
@@ -6813,13 +6813,13 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/c5012f014373d934bbaa6f99331a784a"
 				float volumeColorSrc = audioLinkMask.g;
 				if (1.0 == 1) volumeColorSrc = audioLinkMask.r;
 				if (1.0 == 2) volumeColorSrc = audioVal;
-				float3 lowColor = float4(0,0,1,1).rgb * poiThemeColor(poiMods, float4(0,0,1,1).rgb, 0.0);
+				float3 lowColor = float4(0.2991411,0,1,1).rgb * poiThemeColor(poiMods, float4(0.2991411,0,1,1).rgb, 0.0);
 				float3 midColor = float4(0,1,0,1).rgb * poiThemeColor(poiMods, float4(0,1,0,1).rgb, 0.0);
 				float3 highColor = float4(1,0,0,1).rgb * poiThemeColor(poiMods, float4(1,0,0,1).rgb, 0.0);
 				float3 volumeColor = lerp(lowColor, midColor, saturate(volumeColorSrc * 2));
 				volumeColor = lerp(volumeColor, highColor, saturate(volumeColorSrc * 2 - 1));
-				float3 emissionColor = lerp(lowColor * 0.0, midColor * 0.0, saturate(volumeColorSrc * 2));
-				emissionColor = lerp(emissionColor, highColor * 0.0, saturate(volumeColorSrc * 2 - 1));
+				float3 emissionColor = lerp(lowColor * 0.5, midColor * 0.5, saturate(volumeColorSrc * 2));
+				emissionColor = lerp(emissionColor, highColor * 0.5, saturate(volumeColorSrc * 2 - 1));
 				#if defined(POI_PASS_BASE) || defined(POI_PASS_ADD)
 				poiFragData.emission += emissionColor * audioLinkValue;
 				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor, customBlend(poiFragData.baseColor, volumeColor * colorAndMask.rgb, 0.0), saturate(1.0 * audioLinkValue));
@@ -9781,12 +9781,12 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/c5012f014373d934bbaa6f99331a784a"
 					colorAndMask.a = customBlend(colorAndMask.a, poiMods.globalMask[0.0-1], 2.0);
 				}
 				float2 uv = poiMesh.uv[2.0];
-				float2 decalCenter = float4(0,0,1,1);
+				float2 decalCenter = float4(0.5,0.5,1,1);
 				float theta = radians(0.0 + _Time.z * 0.0);
 				float cs = cos(theta);
 				float sn = sin(theta);
 				uv = float2((uv.x - decalCenter.x) * cs - (uv.y - decalCenter.y) * sn + decalCenter.x, (uv.x - decalCenter.x) * sn + (uv.y - decalCenter.y) * cs + decalCenter.y);
-				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0,0,1,1), float4(1,1,1,1).yw / 2 + float4(0,0,1,1), float2(0, 0), float2(1, 1));
+				uv = remap(uv, float2(0, 0) - float4(1,1,1,1).xz / 2 + float4(0.5,0.5,1,1), float4(1,1,1,1).yw / 2 + float4(0.5,0.5,1,1), float2(0, 0), float2(1, 1));
 				float4 audioLinkMask = 1.0;
 				float2 aluv = uv;
 				if (0.0 == 1)
@@ -9834,13 +9834,13 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/c5012f014373d934bbaa6f99331a784a"
 				float volumeColorSrc = audioLinkMask.g;
 				if (1.0 == 1) volumeColorSrc = audioLinkMask.r;
 				if (1.0 == 2) volumeColorSrc = audioVal;
-				float3 lowColor = float4(0,0,1,1).rgb * poiThemeColor(poiMods, float4(0,0,1,1).rgb, 0.0);
+				float3 lowColor = float4(0.2991411,0,1,1).rgb * poiThemeColor(poiMods, float4(0.2991411,0,1,1).rgb, 0.0);
 				float3 midColor = float4(0,1,0,1).rgb * poiThemeColor(poiMods, float4(0,1,0,1).rgb, 0.0);
 				float3 highColor = float4(1,0,0,1).rgb * poiThemeColor(poiMods, float4(1,0,0,1).rgb, 0.0);
 				float3 volumeColor = lerp(lowColor, midColor, saturate(volumeColorSrc * 2));
 				volumeColor = lerp(volumeColor, highColor, saturate(volumeColorSrc * 2 - 1));
-				float3 emissionColor = lerp(lowColor * 0.0, midColor * 0.0, saturate(volumeColorSrc * 2));
-				emissionColor = lerp(emissionColor, highColor * 0.0, saturate(volumeColorSrc * 2 - 1));
+				float3 emissionColor = lerp(lowColor * 0.5, midColor * 0.5, saturate(volumeColorSrc * 2));
+				emissionColor = lerp(emissionColor, highColor * 0.5, saturate(volumeColorSrc * 2 - 1));
 				#if defined(POI_PASS_BASE) || defined(POI_PASS_ADD)
 				poiFragData.emission += emissionColor * audioLinkValue;
 				poiFragData.baseColor.rgb = lerp(poiFragData.baseColor, customBlend(poiFragData.baseColor, volumeColor * colorAndMask.rgb, 0.0), saturate(1.0 * audioLinkValue));
