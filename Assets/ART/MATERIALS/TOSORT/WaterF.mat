@@ -8,22 +8,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WaterF
-  m_Shader: {fileID: 4800000, guid: 2f546a5668b954f4687431ebbfddec11, type: 3}
+  m_Shader: {fileID: 4800000, guid: 958d7a8f4efc20041b2aac6332dc4ff4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - BSSBLOOMFOGTYPE_HEIGHT
-  - VIGNETTE_MASKED
-  - _LIGHTINGMODE_FLAT
-  - _RIM2STYLE_POIYOMI
-  - _RIMSTYLE_POIYOMI
-  - _STOCHASTICMODE_NONE
-  - _TPS_ANIMATEDTOGGLE_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -267,7 +260,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FlowMap:
-        m_Texture: {fileID: 2800000, guid: 923a20e8c8f439648bdf7025c790db42, type: 3}
+        m_Texture: {fileID: 2800000, guid: 305c07a8ce5ca984b8387c51eed98f95, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamNoiseTex:
@@ -746,6 +739,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _WaterMap1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterMap2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _texcoord:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -876,6 +877,8 @@ Material:
     - _AnisoReplace: 0
     - _AnisoUseBaseColor: 0
     - _AnisoUseLightColor: 1
+    - _AntiAliasingThresholdSm: 0.01
+    - _AntiAliasingVarianceSm: 5
     - _Ap_Rim2Light_FeatherOff: 0
     - _Ap_Rim2Light_Power: 0.1
     - _Ap_RimLight_FeatherOff: 0
@@ -1671,6 +1674,8 @@ Material:
     - _FoamPower: 200
     - _FoamRoughness: 0.6
     - _FoamStochasticToggle: 0
+    - _FoamStripeScale: 20
+    - _FoamStripeSpeed: 4
     - _FoamToggle: 0
     - _FogBrightness: 1
     - _FogBrightness2: 1
@@ -3277,6 +3282,12 @@ Material:
     - _VoronoiSpeed: 3.52
     - _VoronoiType: 1
     - _VoronoiWaveHeight: 1
+    - _Water1SpeedX: 0
+    - _Water1SpeedY: 0
+    - _Water1Strength: 3
+    - _Water2SpeedX: 0
+    - _Water2SpeedY: 0
+    - _Water2Strength: 1
     - _WaveDirection0: 0
     - _WaveDirection1: 0
     - _WaveDirection2: 0
@@ -3290,6 +3301,7 @@ Material:
     - _WaveSpeed1: 1.1
     - _WaveSpeed2: 1.2
     - _WaveSpeedGlobal: 3
+    - _WaveStrength: 0.1
     - _WaveStrength0: 0.1
     - _WaveStrength1: 0.1
     - _WaveStrength2: 0.1
@@ -3305,6 +3317,7 @@ Material:
     - _mattalic: 0.141
     - _ppHueSelectOrShift: 1
     - _smooth: 0.8
+    - footer_booth: 0
     - footer_discord: 0
     - footer_github: 0
     - footer_patreon: 0
@@ -3321,7 +3334,11 @@ Material:
     - g_start_tps_pulsing: 0
     - g_start_tps_squeeze: 0
     - m_AudioLinkCategory: 0
+    - m_Flow: 0
+    - m_MainSet: 0
     - m_OutlineCategory: 0
+    - m_Water1: 0
+    - m_Water2: 0
     - m_end_ALDecalSpectrum: 0
     - m_end_ALVolumeColor: 0
     - m_end_Alpha: 0
@@ -4064,6 +4081,7 @@ Material:
     - shader_is_using_thry_editor: 0
     - shader_locale: 0
     - shader_master_label: 0
+    - shader_properties_label_file: 0
     m_Colors:
     - _1st_ShadeColor: {r: 1, g: 1, b: 1, a: 1}
     - _1st_ShadeMapPan: {r: 0, g: 0, b: 0, a: 0}
@@ -4610,6 +4628,8 @@ Material:
     - _VoronoiScale: {r: 2, g: 2, b: 0, a: 0}
     - _VoronoiScroll: {r: 0, g: -0.25, b: 0, a: 0}
     - _VoronoiSpeed: {r: 1, g: 1, b: 1, a: 1}
+    - _Water1Tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Water2Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _WireframeColor: {r: 1, g: 1, b: 1, a: 1}
     - _emission: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []

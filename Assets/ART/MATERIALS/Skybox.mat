@@ -118,11 +118,11 @@ Material:
     - _RotationAmount: 1
     - _RotationSpeedX: 0.3
     - _RotationSpeedY: 0.3
-    - _ScarPositionX: -0.53
-    - _ScarPositionY: 0.66
-    - _ScarPositionZ: 0.96
-    - _ScarRotationX: 152
-    - _ScarRotationY: 98
+    - _ScarPositionX: -0.38
+    - _ScarPositionY: 0.53
+    - _ScarPositionZ: 0.93
+    - _ScarRotationX: 130
+    - _ScarRotationY: 76
     - _ScarRotationZ: 87
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

@@ -2925,7 +2925,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/e4ddbc5982e7f394496e3acd84f68bef"
 				poiMods.globalMask[14] = 1;
 				poiMods.globalMask[15] = 1;
 				ApplyGlobalMaskModifiers(poiMesh, poiMods, poiCam);
-				float2 mainUV = poiUV(poiMesh.uv[0.0].xy, float4(2,2,0,0));
+				float2 mainUV = poiUV(poiMesh.uv[1.0].xy, float4(10,10,0.52,0));
 				if (0.0)
 				{
 					mainUV = sharpSample(float4(0.001953125,0.001953125,512,512), mainUV);
@@ -5846,7 +5846,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/e4ddbc5982e7f394496e3acd84f68bef"
 				poiMods.globalMask[14] = 1;
 				poiMods.globalMask[15] = 1;
 				ApplyGlobalMaskModifiers(poiMesh, poiMods, poiCam);
-				float2 mainUV = poiUV(poiMesh.uv[0.0].xy, float4(2,2,0,0));
+				float2 mainUV = poiUV(poiMesh.uv[1.0].xy, float4(10,10,0.52,0));
 				if (0.0)
 				{
 					mainUV = sharpSample(float4(0.001953125,0.001953125,512,512), mainUV);
@@ -8404,7 +8404,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi Pro/e4ddbc5982e7f394496e3acd84f68bef"
 				poiMods.globalMask[14] = 1;
 				poiMods.globalMask[15] = 1;
 				ApplyGlobalMaskModifiers(poiMesh, poiMods, poiCam);
-				float2 mainUV = poiUV(poiMesh.uv[0.0].xy, float4(2,2,0,0));
+				float2 mainUV = poiUV(poiMesh.uv[1.0].xy, float4(10,10,0.52,0));
 				if (0.0)
 				{
 					mainUV = sharpSample(float4(0.001953125,0.001953125,512,512), mainUV);
