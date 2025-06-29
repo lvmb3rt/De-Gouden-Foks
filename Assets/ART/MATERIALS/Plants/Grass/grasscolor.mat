@@ -8,33 +8,33 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: grasscolor
-  m_Shader: {fileID: 4800000, guid: b9a847809fcc69d4c8badf91c555e8bf, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4c7027e4090faf84a9f868a1f7528ada, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords:
   - BSSBLOOMFOGTYPE_HEIGHT
   - VIGNETTE_MASKED
+  - _ALPHAPREMULTIPLY_ON
   - _LIGHTINGMODE_REALISTIC
   - _RIM2STYLE_POIYOMI
   - _RIMSTYLE_POIYOMI
   - _STOCHASTICMODE_NONE
-  m_LightmapFlags: 4
+  - _TPS_ANIMATEDTOGGLE_ON
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: -1
   stringTagMap:
     AllLockedGUIDS: a0e6910886389a84eab12f2b756931c2
     OriginalKeywords: BSSBLOOMFOGTYPE_HEIGHT VIGNETTE_MASKED _LIGHTINGMODE_REALISTIC
       _RIM2STYLE_POIYOMI _RIMSTYLE_POIYOMI _STOCHASTICMODE_NONE
     OriginalShader: .poiyomi/Poiyomi Pro
     OriginalShaderGUID: 77f45810ea400c74e929db1f8ea09c47
-    RenderType: TransparentCutout
     _stripped_tex__ClothDFG: 76d65cbce584df7449699fb8406f60ea
     _stripped_tex__SkinLUT: d13510bb2be49aa40a66a0101efb6a36
     _stripped_tex__ToonRamp: 61bd594533da4fc42bd46ef93ba5a4f6
-  disabledShaderPasses:
-  - ALWAYS
+  disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -296,7 +296,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 34ca7bbbc08903f4585a4dfa8ecfd65c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1ef088cef260299439880abdccf6c8f4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap:
@@ -492,6 +492,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TPS_BakedMesh:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TerrainHolesTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -847,6 +851,9 @@ Material:
     - _CCIgnoreCastedShadows: 0
     - _CameraAngleMax: 90
     - _CameraAngleMin: 45
+    - _CameraFadingEnabled: 0
+    - _CameraFarFadeDistance: 2
+    - _CameraNearFadeDistance: 1
     - _CenterOutDissolveInvert: 0
     - _CenterOutDissolveMode: 1
     - _CenterOutDissolveNormals: 0
@@ -930,7 +937,7 @@ Material:
     - _CurvatureU: 0
     - _CurvatureV: 0
     - _CustomColors: 0
-    - _Cutoff: 0.254
+    - _Cutoff: 0.63
     - _Decal0ApplyGlobalMaskBlendType: 0
     - _Decal0ApplyGlobalMaskIndex: 0
     - _Decal0ChannelSeparation: 0
@@ -1221,6 +1228,8 @@ Material:
     - _DissolveToTextureUV: 0
     - _DissolveType: 1
     - _DissolveUseVertexColors: 0
+    - _DistortionBlend: 0.5
+    - _DistortionEnabled: 0
     - _DistortionFlowTexture1UV: 0
     - _DistortionFlowTextureUV: 0
     - _DistortionMaskChannel: 0
@@ -1229,8 +1238,9 @@ Material:
     - _DistortionStrength1: 0.01
     - _DistortionStrength1AudioLinkBand: 0
     - _DistortionStrengthAudioLinkBand: 0
+    - _DistortionStrengthScaled: 0
     - _DistortionUvToDistort: 0
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _DstBlendAlpha: 1
     - _EdgeFade: 0.1
     - _EmissPulseSpeed: 1
@@ -1272,6 +1282,7 @@ Material:
     - _EmissionColor2ThemeIndex: 0
     - _EmissionColor3ThemeIndex: 0
     - _EmissionColorThemeIndex: 0
+    - _EmissionEnabled: 0
     - _EmissionFluorescence: 0
     - _EmissionFluorescence1: 0
     - _EmissionFluorescence2: 0
@@ -1438,6 +1449,7 @@ Material:
     - _FlipbookMaskGlobalMask: 0
     - _FlipbookMaskGlobalMaskBlendType: 2
     - _FlipbookMaskUV: 0
+    - _FlipbookMode: 0
     - _FlipbookReplace: 1
     - _FlipbookRotation: 0
     - _FlipbookRotationSpeed: 0
@@ -1864,6 +1876,7 @@ Material:
     - _LightingDetailShadowStrengthR: 1
     - _LightingDirectionMode: 0
     - _LightingEnableLightVolumes: 1
+    - _LightingEnabled: 1
     - _LightingForceColorEnabled: 0
     - _LightingForcedColorThemeIndex: 0
     - _LightingGradientEnd: 0.5
@@ -2147,7 +2160,7 @@ Material:
     - _MatcapUVMode: 1
     - _MatcapUVToBlend: 1
     - _MetaCull: 0
-    - _Metallic: 0
+    - _Metallic: 0.171
     - _MetallicChannel: 2
     - _MetallicMult: 0
     - _Mirror: 0
@@ -2188,7 +2201,7 @@ Material:
     - _MochieSpecularStrengthGlobalMask: 0
     - _MochieSpecularStrengthGlobalMaskBlendType: 2
     - _MochieSpecularTintThemeIndex: 0
-    - _Mode: 1
+    - _Mode: 3
     - _ModelAngleMax: 90
     - _ModelAngleMin: 45
     - _MultilayerMathBlurMapUV: 0
@@ -2704,6 +2717,10 @@ Material:
     - _ShadowReceive: 0
     - _ShadowStrength: 1
     - _ShadowStrengthMaskUV: 0
+    - _ShakeBending: 1
+    - _ShakeDisplacement: 1
+    - _ShakeTime: 1
+    - _ShakeWindspeed: 1
     - _Shape1Depth: 0.1
     - _Shape1Duration: 0.1
     - _Shape2Depth: 0.2
@@ -2715,6 +2732,9 @@ Material:
     - _SkinThicknessPower: 1
     - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
+    - _SoftParticlesEnabled: 0
+    - _SoftParticlesFarFadeDistance: 1
+    - _SoftParticlesNearFadeDistance: 0
     - _Specular2ndLayer: 0
     - _SpecularBlur: 0
     - _SpecularBorder: 0.5
@@ -3048,7 +3068,7 @@ Material:
     - _WriggleSpeed: 0.28
     - _ZClip: 1
     - _ZTest: 4
-    - _ZWrite: 1
+    - _ZWrite: 0
     - _ppHueSelectOrShift: 1
     - footer_discord: 0
     - footer_github: 0
@@ -3909,6 +3929,7 @@ Material:
     - _BlueColor: {r: 1, g: 1, b: 1, a: 1}
     - _BlueTexturePan: {r: 0, g: 0, b: 0, a: 0}
     - _BumpMapPan: {r: 0, g: 0, b: 0, a: 0}
+    - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _CenterOutDissolveDirection: {r: 0, g: 0, b: 1, a: 0}
     - _ClearCoatMapsPan: {r: 0, g: 0, b: 0, a: 0}
     - _ClearCoatReflectionTint: {r: 1, g: 1, b: 1, a: 1}
@@ -4251,6 +4272,7 @@ Material:
     - _ShadowColorTexPan: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowStrengthMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _SkinThicknessMapPan: {r: 0, g: 0, b: 0, a: 0}
+    - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SphericalDissolveCenter: {r: 0, g: 0, b: 0, a: 1}
     - _SssColorBleedAoWeights: {r: 0.4, g: 0.15, b: 0.13, a: 0}
     - _SssTransmissionAbsorption: {r: -8, g: -40, b: -64, a: 0}
